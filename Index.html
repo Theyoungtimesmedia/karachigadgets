@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karachi Gadgets - Abuja's Premier Tech Retailer</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3F8EFC',secondary:'#0A3D62'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Open Sans', sans-serif;
+scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+}
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-20px); }
+100% { transform: translateY(0px); }
+}
+@keyframes pulse {
+0% { opacity: 0.4; }
+50% { opacity: 0.8; }
+100% { opacity: 0.4; }
+}
+@keyframes neonPulse {
+0% { box-shadow: 0 0 5px rgba(62, 184, 255, 0.4), 0 0 10px rgba(62, 184, 255, 0.2); }
+50% { box-shadow: 0 0 20px rgba(62, 184, 255, 0.6), 0 0 30px rgba(62, 184, 255, 0.4); }
+100% { box-shadow: 0 0 5px rgba(62, 184, 255, 0.4), 0 0 10px rgba(62, 184, 255, 0.2); }
+}
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+.animate-pulse-custom {
+animation: pulse 2s ease-in-out infinite;
+}
+.neon-glow {
+animation: neonPulse 2s infinite;
+}
+.hero-gradient {
+background: radial-gradient(circle at center, rgba(62, 184, 255, 0.2), rgba(98, 0, 255, 0.1), transparent);
+}
+.primary-gradient {
+background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+}
+.card-hover-gradient {
+background: linear-gradient(to right, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+}
+.card-shadow {
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.05);
+transition: all 0.3s ease;
+}
+.card-shadow:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.05);
+}
+.btn-3d {
+position: relative;
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+transition: all 0.3s ease;
+border: none;
+overflow: hidden;
+}
+.btn-3d:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-3d:active {
+transform: translateY(-1px);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-3d::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+z-index: 1;
+}
+.inner-shadow {
+box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.icon-3d {
+filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+transition: all 0.3s ease;
+}
+.icon-3d:hover {
+transform: scale(1.1);
+filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+.testimonial-card {
+transition: all 0.3s ease;
+transform: perspective(1000px) rotateX(0deg);
+}
+.testimonial-card:hover {
+transform: perspective(1000px) rotateX(5deg);
+}
+.scroll-reveal {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.6s ease;
+}
+.scroll-reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+input, select, button {
+outline: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.snap-scroll {
+scroll-snap-type: y mandatory;
+}
+.snap-scroll > section {
+scroll-snap-align: start;
+}
+.lazy-image {
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.lazy-image.loaded {
+opacity: 1;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">Karachi Gadgets</h1>
+<nav class="hidden md:flex ml-10">
+<a href="#home" class="mx-3 font-medium text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="#products" class="mx-3 font-medium text-gray-700 hover:text-primary transition-colors">Products</a>
+<a href="#about" class="mx-3 font-medium text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#testimonials" class="mx-3 font-medium text-gray-700 hover:text-primary transition-colors">Testimonials</a>
+<a href="#contact" class="mx-3 font-medium text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+</div>
+<div class="flex items-center">
+<div class="flex items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer icon-3d">
+<i class="ri-search-line ri-lg"></i>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer icon-3d">
+<i class="ri-user-line ri-lg"></i>
+</div>
+<div class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary cursor-pointer icon-3d relative">
+<i class="ri-shopping-cart-line ri-lg"></i>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+</div>
+</div>
+<a href="https://wa.me/2348160151217" class="hidden md:flex items-center px-4 py-2 bg-green-500 text-white rounded-button btn-3d whitespace-nowrap">
+<i class="ri-whatsapp-line mr-2"></i> Chat on WhatsApp
+</a>
+<div class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700 cursor-pointer">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen pt-16 overflow-hidden bg-[#0A0F1C]">
+<div class="absolute inset-0 bg-gradient-to-br from-[#0A0F1C] via-[#1A1F2E] to-[#0A0F1C] opacity-90"></div>
+<div class="absolute inset-0">
+<div class="absolute inset-0 bg-[url('https://static.readdy.ai/image/ab2842e9417e94483a87673c0d05d180/91607b4be5eccff508bb87908cc04e34.png')] bg-cover bg-center opacity-40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#0A0F1C] via-transparent to-transparent"></div>
+</div>
+<div class="container mx-auto px-4 h-full min-h-screen flex items-center relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="text-white space-y-8 animate-slide-up">
+<div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+<span class="animate-pulse">
+<i class="ri-flashlight-line text-primary"></i>
+</span>
+<span class="text-sm font-medium">New Arrival - iPhone 16 Pro Max</span>
+</div>
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-text-reveal">
+Experience Next-Gen <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Innovation</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-300 max-w-xl animate-fade-in">
+Discover the perfect blend of style and technology with our premium collection of Apple devices and gaming consoles. Experience unmatched quality and nationwide delivery.
+</p>
+<div class="flex flex-wrap gap-4 animate-slide-up" style="animation-delay: 0.3s">
+<button class="group px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-button btn-3d whitespace-nowrap flex items-center space-x-2 transition-all duration-300 transform hover:translate-y-[-2px]">
+<span>Shop Now</span>
+<i class="ri-arrow-right-line transition-transform duration-300 transform group-hover:translate-x-1"></i>
+</button>
+<button class="group px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold rounded-button btn-3d whitespace-nowrap flex items-center space-x-2 border border-white/20 transition-all duration-300">
+<span>Contact Us</span>
+<i class="ri-customer-service-line"></i>
+</button>
+</div>
+<div class="flex items-center space-x-8 pt-8 border-t border-white/10 animate-fade-in" style="animation-delay: 0.6s">
+<div class="flex items-center space-x-2">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+<span class="text-sm">Official Warranty</span>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ri-truck-line text-primary text-2xl"></i>
+<span class="text-sm">Free Delivery</span>
+</div>
+<div class="flex items-center space-x-2">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+<span class="text-sm">24/7 Support</span>
+</div>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
+<img src="https://public.readdy.ai/ai/img_res/e8d6894f-1721-4483-b115-e197230389db.jpg" alt="iPhone 15 Pro Max" class="relative z-10 w-full h-auto transform hover:scale-105 transition-transform duration-500 animate-float">
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+<span class="text-white/60 text-sm mb-2">Scroll to explore</span>
+<i class="ri-arrow-down-line text-white/60 text-2xl"></i>
+</div>
+<style>
+@keyframes slide-up {
+from { transform: translateY(100px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+@keyframes text-reveal {
+from { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); }
+to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@keyframes fade-in {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-20px); }
+}
+@keyframes pulse-slow {
+0%, 100% { opacity: 0.4; }
+50% { opacity: 0.8; }
+}
+.animate-slide-up {
+animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+opacity: 0;
+}
+.animate-text-reveal {
+animation: text-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-fade-in {
+animation: fade-in 1s ease forwards;
+opacity: 0;
+}
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+.animate-pulse-slow {
+animation: pulse-slow 4s ease-in-out infinite;
+}
+</style>
+</section>
+<!-- Features Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Experience premium tech shopping with unmatched service and quality assurance</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-6 rounded-lg card-shadow scroll-reveal">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4 mx-auto">
+<i class="ri-shield-check-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-2">Authentic Products</h3>
+<p class="text-gray-600 text-center">100% genuine Apple products with manufacturer warranty</p>
+</div>
+<div class="bg-white p-6 rounded-lg card-shadow scroll-reveal">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4 mx-auto">
+<i class="ri-truck-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-2">Nationwide Delivery</h3>
+<p class="text-gray-600 text-center">Fast and secure delivery to all states in Nigeria</p>
+</div>
+<div class="bg-white p-6 rounded-lg card-shadow scroll-reveal">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4 mx-auto">
+<i class="ri-customer-service-2-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-2">Expert Support</h3>
+<p class="text-gray-600 text-center">Dedicated customer service available 7 days a week</p>
+</div>
+<div class="bg-white p-6 rounded-lg card-shadow scroll-reveal">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-4 mx-auto">
+<i class="ri-secure-payment-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-center mb-2">Secure Payment</h3>
+<p class="text-gray-600 text-center">Multiple payment options with secure transaction processing</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section id="products" class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Products</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore our collection of premium Apple products and accessories</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg overflow-hidden card-shadow scroll-reveal">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=iPhone%2014%20Pro%20Max%20in%20deep%20purple%20color%20on%20a%20clean%20white%20background%2C%20professional%20product%20photography%2C%20ultra%20high%20resolution%2C%20studio%20lighting%2C%20front%20view&width=600&height=400&seq=2&orientation=landscape" alt="iPhone 14 Pro Max" class="w-full h-full object-cover object-top lazy-image">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-bold">iPhone 14 Pro Max</h3>
+<span class="text-primary font-bold">₦950,000</span>
+</div>
+<p class="text-gray-600 mb-4">A16 Bionic chip, 48MP camera, Dynamic Island</p>
+<button class="w-full py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden card-shadow scroll-reveal">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Apple%20iPad%20Pro%20with%20Magic%20Keyboard%20on%20a%20clean%20white%20background%2C%20professional%20product%20photography%2C%20ultra%20high%20resolution%2C%20studio%20lighting%2C%20angled%20view&width=600&height=400&seq=3&orientation=landscape" alt="iPad Pro" class="w-full h-full object-cover object-top lazy-image">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-bold">iPad Pro M2</h3>
+<span class="text-primary font-bold">₦780,000</span>
+</div>
+<p class="text-gray-600 mb-4">M2 chip, Liquid Retina XDR display, Apple Pencil support</p>
+<button class="w-full py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden card-shadow scroll-reveal">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=PlayStation%205%20console%20with%20DualSense%20controller%20on%20a%20clean%20white%20background%2C%20professional%20product%20photography%2C%20ultra%20high%20resolution%2C%20studio%20lighting%2C%20front%20view&width=600&height=400&seq=4&orientation=landscape" alt="PlayStation 5" class="w-full h-full object-cover object-top lazy-image">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-bold">PlayStation 5</h3>
+<span class="text-primary font-bold">₦650,000</span>
+</div>
+<p class="text-gray-600 mb-4">Ultra-high speed SSD, 4K gaming, 3D Audio technology</p>
+<button class="w-full py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+Add to Cart
+</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<button class="px-8 py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+View All Products
+</button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2 scroll-reveal">
+<img src="https://readdy.ai/api/search-image?query=Modern%20tech%20store%20interior%20with%20Apple%20products%20on%20display%2C%20clean%20minimalist%20design%2C%20blue%20accent%20lighting%2C%20customers%20browsing%20devices%2C%20professional%20retail%20photography&width=800&height=600&seq=5&orientation=landscape" alt="Karachi Gadgets Store" class="w-full h-auto rounded-lg shadow-lg lazy-image">
+</div>
+<div class="w-full lg:w-1/2 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">About Karachi Gadgets</h2>
+<p class="text-gray-600 mb-4">Established in 2023, Karachi Gadgets has quickly become Abuja's premier destination for premium tech products. We specialize in authentic Apple devices and gaming consoles, offering a curated selection of the latest technology.</p>
+<p class="text-gray-600 mb-6">Our commitment to quality, authenticity, and exceptional customer service has made us the trusted choice for tech enthusiasts across Nigeria. We pride ourselves on providing genuine products with manufacturer warranties and dedicated after-sales support.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-700">Authentic Products</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-700">Expert Consultation</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-700">Nationwide Delivery</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-700">After-Sales Support</span>
+</div>
+</div>
+<button class="px-6 py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+Learn More About Us
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section id="testimonials" class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied customers about their experience with Karachi Gadgets</p>
+</div>
+<div class="relative">
+<div class="flex overflow-hidden testimonial-container">
+<div class="testimonial-slide flex w-full">
+<div class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-card scroll-reveal">
+<div class="bg-white p-6 rounded-lg shadow-lg">
+<div class="flex mb-4">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"I purchased an iPhone 14 Pro from Karachi Gadgets and was impressed by their service. The product was authentic with full warranty, and their delivery was prompt. Highly recommend!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-full h-full flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold">Oluwaseun Adebayo</h4>
+<p class="text-gray-500 text-sm">Lagos, Nigeria</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-card scroll-reveal">
+<div class="bg-white p-6 rounded-lg shadow-lg">
+<div class="flex mb-4">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"Best place to buy Apple products in Abuja! I got my iPad Pro and AirPods from them. The staff are knowledgeable and helped me choose the right configuration for my needs. Great experience!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-full h-full flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold">Chioma Okafor</h4>
+<p class="text-gray-500 text-sm">Abuja, Nigeria</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 px-4 flex-shrink-0 testimonial-card scroll-reveal">
+<div class="bg-white p-6 rounded-lg shadow-lg">
+<div class="flex mb-4">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-6">"I ordered a PS5 online and received it in Port Harcourt within 2 days. The console was perfectly packaged and works flawlessly. Their WhatsApp support was very responsive throughout. Will definitely shop again!"</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<div class="w-full h-full flex items-center justify-center text-gray-500">
+<i class="ri-user-line ri-lg"></i>
+</div>
+</div>
+<div>
+<h4 class="font-bold">Emmanuel Okonkwo</h4>
+<p class="text-gray-500 text-sm">Port Harcourt, Nigeria</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="absolute top-1/2 -left-4 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary z-10 testimonial-prev btn-3d">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button class="absolute top-1/2 -right-4 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary z-10 testimonial-next btn-3d">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+<div class="flex justify-center mt-8">
+<div class="w-3 h-3 rounded-full bg-gray-300 mx-1 testimonial-dot active"></div>
+<div class="w-3 h-3 rounded-full bg-gray-300 mx-1 testimonial-dot"></div>
+<div class="w-3 h-3 rounded-full bg-gray-300 mx-1 testimonial-dot"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Store Location -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Visit Our Store</h2>
+<p class="text-gray-600 mb-6">Experience our products in person at our flagship store in Abuja. Our knowledgeable staff are ready to assist you with product demonstrations and expert advice.</p>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Store Address</h4>
+<p class="text-gray-600">SHOP FC-21A, Old Banex Plaza, Wuse II, Abuja</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Opening Hours</h4>
+<p class="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+<p class="text-gray-600">Sunday: 12:00 PM - 5:00 PM</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center text-primary mr-3 flex-shrink-0">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Contact</h4>
+<p class="text-gray-600">Phone: +234 701 929 1432</p>
+<p class="text-gray-600">WhatsApp: +234 816 015 1217</p>
+<p class="text-gray-600">Email: karachigadget1994@gmail.com</p>
+</div>
+</div>
+</div>
+<a href="https://wa.me/2348160151217" class="inline-flex items-center px-6 py-3 bg-green-500 text-white font-bold rounded-button btn-3d whitespace-nowrap">
+<i class="ri-whatsapp-line mr-2"></i> Contact via WhatsApp
+</a>
+</div>
+<div class="w-full lg:w-1/2 scroll-reveal">
+<div class="rounded-lg overflow-hidden shadow-lg h-96">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Store Location Map" class="w-full h-full object-cover lazy-image">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12 scroll-reveal">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Find answers to common questions about our products and services</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="mb-4 scroll-reveal">
+<button class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md text-left faq-toggle">
+<span class="font-bold">Are your Apple products authentic?</span>
+<i class="ri-arrow-down-s-line ri-lg text-primary faq-icon"></i>
+</button>
+<div class="bg-white px-4 pb-4 rounded-b-lg shadow-md faq-content hidden">
+<p class="text-gray-600">Yes, all our Apple products are 100% authentic with valid manufacturer warranties. We are committed to providing only genuine products to our customers.</p>
+</div>
+</div>
+<div class="mb-4 scroll-reveal">
+<button class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md text-left faq-toggle">
+<span class="font-bold">Do you offer nationwide delivery?</span>
+<i class="ri-arrow-down-s-line ri-lg text-primary faq-icon"></i>
+</button>
+<div class="bg-white px-4 pb-4 rounded-b-lg shadow-md faq-content hidden">
+<p class="text-gray-600">Yes, we offer secure nationwide delivery to all states in Nigeria. Delivery times typically range from 1-3 business days depending on your location.</p>
+</div>
+</div>
+<div class="mb-4 scroll-reveal">
+<button class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md text-left faq-toggle">
+<span class="font-bold">What payment methods do you accept?</span>
+<i class="ri-arrow-down-s-line ri-lg text-primary faq-icon"></i>
+</button>
+<div class="bg-white px-4 pb-4 rounded-b-lg shadow-md faq-content hidden">
+<p class="text-gray-600">We accept bank transfers, credit/debit cards, and cash payments (for in-store purchases). All online transactions are processed through secure payment gateways.</p>
+</div>
+</div>
+<div class="mb-4 scroll-reveal">
+<button class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md text-left faq-toggle">
+<span class="font-bold">What is your return policy?</span>
+<i class="ri-arrow-down-s-line ri-lg text-primary faq-icon"></i>
+</button>
+<div class="bg-white px-4 pb-4 rounded-b-lg shadow-md faq-content hidden">
+<p class="text-gray-600">We offer a 7-day return policy for unopened products in their original packaging. For defective items, we follow Apple's warranty policy and will assist with the repair or replacement process.</p>
+</div>
+</div>
+<div class="scroll-reveal">
+<button class="w-full flex justify-between items-center bg-white p-4 rounded-lg shadow-md text-left faq-toggle">
+<span class="font-bold">Do you offer after-sales support?</span>
+<i class="ri-arrow-down-s-line ri-lg text-primary faq-icon"></i>
+</button>
+<div class="bg-white px-4 pb-4 rounded-b-lg shadow-md faq-content hidden">
+<p class="text-gray-600">Yes, we provide dedicated after-sales support for all products purchased from us. Our technical team is available to assist with setup, troubleshooting, and warranty claims.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter & Contact -->
+<section id="contact" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-1/2 p-8 md:p-12 primary-gradient text-white scroll-reveal">
+<h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+<p class="mb-8">Have questions about our products or services? Reach out to us and our team will get back to you as soon as possible.</p>
+<div class="mb-6">
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<p>SHOP FC-21A, Old Banex Plaza, Wuse II, Abuja</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<p>+234 701 929 1432</p>
+</div>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-10 h-10 flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-whatsapp-line ri-lg"></i>
+</div>
+<div>
+<p>+234 816 015 1217</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center mr-3 flex-shrink-0">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<p>karachigadget1994@gmail.com</p>
+</div>
+</div>
+</div>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all icon-3d">
+<i class="ri-facebook-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all icon-3d">
+<i class="ri-instagram-line text-white"></i>
+</a>
+<a href="https://threads.net/@karachigadgets" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all icon-3d">
+<i class="ri-thread-line text-white"></i>
+</a>
+<a href="https://wa.me/2348160151217" class="w-10 h-10 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all icon-3d">
+<i class="ri-whatsapp-line text-white"></i>
+</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-8 md:p-12 scroll-reveal">
+<h2 class="text-3xl font-bold mb-6">Subscribe to Our Newsletter</h2>
+<p class="text-gray-600 mb-8">Stay updated with our latest products, promotions, and tech news.</p>
+<form>
+<div class="mb-4">
+<label for="name" class="block text-gray-700 mb-2">Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:border-primary" placeholder="Your name">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-gray-700 mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:border-primary" placeholder="Your email address">
+</div>
+<div class="mb-6">
+<label class="flex items-center">
+<div class="relative w-5 h-5 mr-2">
+<input type="checkbox" class="opacity-0 absolute w-full h-full cursor-pointer z-10">
+<div class="w-5 h-5 border border-gray-300 rounded custom-checkbox"></div>
+<div class="hidden absolute inset-0 flex items-center justify-center text-white bg-primary rounded custom-checkbox-checked">
+<i class="ri-check-line ri-xs"></i>
+</div>
+</div>
+<span class="text-gray-600 text-sm">I agree to receive marketing emails and promotions</span>
+</label>
+</div>
+<button type="submit" class="w-full py-3 primary-gradient text-white font-bold rounded-button btn-3d whitespace-nowrap">
+Subscribe Now
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-secondary text-white">
+<div class="container mx-auto px-4 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<h1 class="text-2xl font-['Pacifico'] mb-4">Karachi Gadgets</h1>
+<p class="mb-6">Abuja's premier retailer of authentic Apple products and gaming consoles since 2023.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 rounded-full hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50">
+<i class="ri-facebook-fill text-white text-xl"></i>
+</a>
+<a href="#" class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600 rounded-full hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-500/50">
+<i class="ri-instagram-line text-white text-xl"></i>
+</a>
+<a href="https://threads.net/@karachigadgets" class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-gray-800 to-black rounded-full hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-gray-800/50">
+<i class="ri-threads-fill text-white text-xl"></i>
+</a>
+<a href="https://wa.me/2348160151217" class="w-12 h-12 flex items-center justify-center bg-gradient-to-br from-green-500 to-green-600 rounded-full hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-green-500/50">
+<i class="ri-whatsapp-line text-white text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+<li><a href="#products" class="hover:text-primary transition-colors">Products</a></li>
+<li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a></li>
+<li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Products</h3>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-primary transition-colors">iPhone</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">iPad</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">MacBook</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">AirPods</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">PlayStation 5</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-4">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">
+<i class="ri-map-pin-line"></i>
+</div>
+<span>SHOP FC-21A, Old Banex Plaza, Wuse II, Abuja</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">
+<i class="ri-phone-line"></i>
+</div>
+<span>+234 701 929 1432</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">
+<i class="ri-whatsapp-line"></i>
+</div>
+<span>+234 816 015 1217</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0">
+<i class="ri-mail-line"></i>
+</div>
+<span>karachigadget1994@gmail.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white border-opacity-20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-sm mb-4 md:mb-0">© 2025 Karachi Gadgets. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-visa-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-mastercard-line ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-paypal-line ri-lg"></i>
+</div>
+<a href="https://wa.me/2348160151217" class="flex items-center px-4 py-2 bg-green-500 text-white rounded-button btn-3d whitespace-nowrap">
+<i class="ri-whatsapp-line mr-2"></i> Chat on WhatsApp
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script id="scroll-reveal-script">
+document.addEventListener('DOMContentLoaded', function() {
+const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+const revealOnScroll = function() {
+scrollRevealElements.forEach(element => {
+const elementTop = element.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (elementTop < windowHeight - 100) {
+element.classList.add('active');
+}
+});
+};
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); // Trigger on initial load
+});
+</script>
+<script id="lazy-load-script">
+document.addEventListener('DOMContentLoaded', function() {
+const lazyImages = document.querySelectorAll('.lazy-image');
+const loadImage = function(image) {
+if (image.complete) {
+image.classList.add('loaded');
+} else {
+image.addEventListener('load', function() {
+image.classList.add('loaded');
+});
+}
+};
+const lazyLoad = function() {
+lazyImages.forEach(image => {
+const imageTop = image.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (imageTop < windowHeight + 300) {
+loadImage(image);
+}
+});
+};
+window.addEventListener('scroll', lazyLoad);
+lazyLoad(); // Trigger on initial load
+});
+</script>
+<script id="testimonial-carousel-script">
+document.addEventListener('DOMContentLoaded', function() {
+const testimonialContainer = document.querySelector('.testimonial-container');
+const testimonialSlide = document.querySelector('.testimonial-slide');
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const prevButton = document.querySelector('.testimonial-prev');
+const nextButton = document.querySelector('.testimonial-next');
+const dots = document.querySelectorAll('.testimonial-dot');
+let currentIndex = 0;
+let slideWidth = 0;
+let autoplayInterval;
+const updateSlideWidth = function() {
+if (window.innerWidth >= 768) {
+slideWidth = testimonialContainer.clientWidth / 3;
+} else {
+slideWidth = testimonialContainer.clientWidth;
+}
+testimonialCards.forEach(card => {
+card.style.width = `${slideWidth}px`;
+});
+updateSlidePosition();
+};
+const updateSlidePosition = function() {
+testimonialSlide.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+testimonialSlide.style.transition = 'transform 0.5s ease';
+dots.forEach((dot, index) => {
+if (index === currentIndex) {
+dot.classList.add('bg-primary');
+dot.classList.remove('bg-gray-300');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+};
+const nextSlide = function() {
+if (currentIndex < testimonialCards.length - (window.innerWidth >= 768 ? 3 : 1)) {
+currentIndex++;
+} else {
+currentIndex = 0;
+}
+updateSlidePosition();
+};
+const prevSlide = function() {
+if (currentIndex > 0) {
+currentIndex--;
+} else {
+currentIndex = testimonialCards.length - (window.innerWidth >= 768 ? 3 : 1);
+}
+updateSlidePosition();
+};
+const startAutoplay = function() {
+autoplayInterval = setInterval(nextSlide, 6000);
+};
+const stopAutoplay = function() {
+clearInterval(autoplayInterval);
+};
+// Initialize
+updateSlideWidth();
+startAutoplay();
+// Event listeners
+window.addEventListener('resize', updateSlideWidth);
+prevButton.addEventListener('click', function() {
+prevSlide();
+stopAutoplay();
+startAutoplay();
+});
+nextButton.addEventListener('click', function() {
+nextSlide();
+stopAutoplay();
+startAutoplay();
+});
+dots.forEach((dot, index) => {
+dot.addEventListener('click', function() {
+currentIndex = index;
+updateSlidePosition();
+stopAutoplay();
+startAutoplay();
+});
+});
+testimonialContainer.addEventListener('mouseenter', stopAutoplay);
+testimonialContainer.addEventListener('mouseleave', startAutoplay);
+});
+</script>
+<script id="faq-toggle-script">
+document.addEventListener('DOMContentLoaded', function() {
+const faqToggles = document.querySelectorAll('.faq-toggle');
+faqToggles.forEach(toggle => {
+toggle.addEventListener('click', function() {
+const content = this.nextElementSibling;
+const icon = this.querySelector('.faq-icon');
+if (content.classList.contains('hidden')) {
+content.classList.remove('hidden');
+icon.classList.remove('ri-arrow-down-s-line');
+icon.classList.add('ri-arrow-up-s-line');
+} else {
+content.classList.add('hidden');
+icon.classList.remove('ri-arrow-up-s-line');
+icon.classList.add('ri-arrow-down-s-line');
+}
+});
+});
+});
+</script>
+<script id="custom-checkbox-script">
+document.addEventListener('DOMContentLoaded', function() {
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('change', function() {
+const customCheckbox = this.nextElementSibling;
+const customCheckboxChecked = customCheckbox.nextElementSibling;
+if (this.checked) {
+customCheckboxChecked.classList.remove('hidden');
+} else {
+customCheckboxChecked.classList.add('hidden');
+}
+});
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
